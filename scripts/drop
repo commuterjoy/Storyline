@@ -1,0 +1,4 @@
+var dbs = db.getMongo().getDBNames()
+for (var i in dbs) {
+    print( "dropping db " + db.getName() );
+}
