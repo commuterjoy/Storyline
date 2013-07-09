@@ -7,7 +7,7 @@ var express = require('express')
   , storyline = require('./routes/storyline')
   , mongoose = require('mongoose')
   , http = require('http')
-  , db = mongoose.createConnection(process.env.MONGOLAB_URI, process.env.MONGOLAB_HOST)
+  , db = mongoose.createConnection(process.env.MONGOLAB_URI)
   , path = require('path');
 
 db.on('error', console.error.bind(console, 'connection error:'));
