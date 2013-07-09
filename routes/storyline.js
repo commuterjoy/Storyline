@@ -1,7 +1,7 @@
 
 var storylineSchema = require('../models/storyline.js')
   , mongoose = require('mongoose')
-  , db = mongoose.createConnection('localhost', 'storyline');
+  , db = mongoose.createConnection(process.env.MONGOLAB_URI);
 
 var Storyline = db.model('Storyline', storylineSchema);
 
