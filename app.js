@@ -7,10 +7,10 @@ var express = require('express')
   , storyline = require('./routes/storyline')
   , mongoose = require('mongoose')
   , http = require('http')
-  , db = mongoose.createConnection(process.env.MONGOLAB_URI)
+  , db = mongoose.createConnection(process.env.MONGOLAB_URI || 'localhost/storyline_v001')
   , path = require('path');
 
-db.on('error', console.error.bind(console, 'connection error:'));
+db.on('error', console.error.bind(console, 'connection error'));
     
 var app = express();
 
@@ -30,9 +30,11 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
+// routes
 app.get('/storylines', storyline.find);
 app.get('/storylines/:storyline', storyline.findOne);
 app.put('/storylines/:storyline', storyline.createOrUpdate);
+app.delete('/storylines/:storyline', storyline.remove);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

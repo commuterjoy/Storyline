@@ -2,5 +2,37 @@
 - GET / PUT Storylines via curl
 - Host on Heroku
 - README
-- See also
+- See also - Eg. San_Francisco_Asiana_Airlines_Plane_Crash -> http://en.wikipedia.org/wiki/Asiana_Airlines_Flight_214
+- Article -  
+- People, places, orgs - 
+
+----
+
+function Storyline () {
+    var comment
+      , title
+      , synopsis
+      , slots = [];  // Eg, new StorylineSlot()
+    }
+
+function StorylineSlot () {
+    var time
+      , index
+      , follows
+      , storyline;
+    }
+
+
+- Event
+- Topic
+- CreativeWorks
+
+- Storyline
+    - title
+    - slots: Array[Storyline]
+    - Attribution
+
+----
+
+A system to aggregate news organisations's stories.
 

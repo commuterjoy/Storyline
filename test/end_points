@@ -1,0 +1,4 @@
+
+curl -H 'Content-Type: application/json' -i -X PUT -d @data/flight_214 http://localhost:3000/storylines/San_Francisco_Asiana_Airlines_Plane_Crash
+curl -H 'Content-Type: application/json' -i -X GET http://localhost:3000/storylines/San_Francisco_Asiana_Airlines_Plane_Crash
+curl -H 'Content-Type: application/json' -i -X DELETE http://localhost:3000/storylines/San_Francisco_Asiana_Airlines_Plane_Crash
