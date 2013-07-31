@@ -1,3 +1,22 @@
+@cecilia
+
+# API
+
+- CRUD Storylines via an API
+
+    - UPDATE is not working
+    - Need to story a human readable title & use an guid for the resource
+    - Add people, places, orgs models to the API
+
+- Host on Heroku
+- UI to create a story - TODO - knockout?
+
+# UI 
+
+- Highlight bits of text, classify, and assign to stories
+- Look at a proxy server w/ injected JavaScript Vs. hosted branch of dev-build on ec2 w/ patch JS Vs. plugin
+
+-------------------- OLD
 
 - GET / PUT Storylines via curl
 - Host on Heroku
@@ -21,7 +40,6 @@ function StorylineSlot () {
       , follows
       , storyline;
     }
-
 
 - Event
 - Topic
