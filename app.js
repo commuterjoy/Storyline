@@ -5,6 +5,7 @@
 
 var express = require('express')
   , storyline = require('./routes/storyline')
+  , ui = require('./routes/ui')
   , mongoose = require('mongoose')
   , http = require('http')
   , db = mongoose.createConnection(process.env.MONGOLAB_URI || 'localhost/storyline_v001')
@@ -30,11 +31,14 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-// routes
+// Routes - API
 app.get('/storylines', storyline.find);
 app.get('/storylines/:storyline', storyline.findOne);
 app.put('/storylines/:storyline', storyline.createOrUpdate);
 app.delete('/storylines/:storyline', storyline.remove);
+
+// Routes - UI
+app.get('/', ui.render);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
