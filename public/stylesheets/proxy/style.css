@@ -1,0 +1,50 @@
+.storyline-toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #eDFF2F;
+    min-height: 80px;
+    line-height: 80px;
+    width: 100%;
+    font-family: 'Lucida Grande', sans-serif;
+    font-size: 24px;
+    padding-left: 1em;
+    z-index: 1000;
+    border-bottom: 1px solid #999;
+    text-shadow: 1px 1px #fff;
+}
+
+.storyline-toolbar div {
+    font-size: 14px;
+    display: block;
+    position: absolute;
+    right: 300px;
+    top: 30px;
+    line-height: 0;
+}
+
+.storyline-toolbar input {
+    margin-left: 10px;
+    border: 1px solid #999;
+}
+
+body {
+    margin-top: 80px;
+}
+
+#header {
+    position: inherit;
+}
+
+.person { background-color: #74D7F2; } 
+.location { background-color: #fdd; } 
+.event { background-color: #dcf; }
+
+.type {  } 
+
+#togglePersonButton { background-color: #74D7F2; color: white; }
+#togglePersonButton:hover { background-color: white; color: #74D7F2; }
+#toggleLocationButton { background-color: #fdd; }
+#toggleEventButton { background-color: #dcf; }
+
+

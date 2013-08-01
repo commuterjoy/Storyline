@@ -39,8 +39,8 @@ app.delete('/storylines/:storyline', storyline.remove);
 
 // Routes - UI
 app.get('/', ui.render);
+app.get('/mock', ui.mock);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
-
