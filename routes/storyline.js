@@ -39,7 +39,7 @@ exports.remove = function(req, res) {
 exports.createOrUpdate = function(req, res) {
     var storyline = new Storyline({
         id: req.params.storyline,
-        seeAlso: req.body.seeAlso || [1,2,3] 
+        seeAlso: req.body.seeAlso || [] 
     });
     storyline.save(function (err) {
         if (err) console.log(err)

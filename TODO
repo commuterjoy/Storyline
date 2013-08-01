@@ -13,6 +13,7 @@
 
 # UI 
 
+- Add this article to a storyline (similar to tags)
 - Highlight bits of text, classify, and assign to stories
 - Look at a proxy server w/ injected JavaScript Vs. hosted branch of dev-build on ec2 w/ patch JS Vs. plugin
 

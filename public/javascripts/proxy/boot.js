@@ -4,7 +4,9 @@
 (function (w) {
 
     var go = function () {
-    
+
+        console.log('hello!');
+
     }
 
     go()

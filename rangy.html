@@ -1,0 +1,113 @@
+<html>
+<meta charset="utf-8" />
+
+<p><span class="person">Jessica Ennis-Hill</span> has pulled out of the world championships in Moscow after conceding that the achilles and heel injuries that have plagued her throughout the summer left her "not where I want to be both regarding pain and also form".</p>
+<p>Ennis-Hill, the Olympic heptathlon champion and 2011 world championship silver medallist, will spend the next few weeks trying to get to the root of what caused her injuries and is unlikely to compete again until the 2014 indoor season.</p>
+<p>"To say I am gutted is an understatement," she admitted. "No athlete likes to miss the opportunity to compete at a major championships – they don't come round that often.</p>
+<p>"Up until now we have been focusing on managing the pain so I can train and get myself in shape to go out there to win in Moscow – which has meant not focusing on finding a cure for the injury. The time has now come to stop chasing fitness and look to cure the problem."</p>
+<p>But Saturday's Anniversary Games, in the harsh spotlight of 65,000 screaming well-wishers at the Olympic Stadium, provided a more accurate gauge of her form as she struggled in the 100m hurdles and long jump. "I am so glad I got to compete in London as it gave me a clear picture of where I am – and it is definitely not where I want," she said.</p>
+<p>Her coach, Toni Minichiello, admitted the decision had not been an easy one. While the pain in Ennis-Hill's achilles tendon was manageable she had missed too much of the explosive work required to run and jump faster. Last week she admitted that she had hurdled twice since early June – hardly ideal preparation for competing in seven events over two days at the world championships.</p>
+
+<script src="public/javascripts/proxy/rangy-1.2.3/rangy-core.js"></script>
+<script src="public/javascripts/proxy/rangy-1.2.3/rangy-cssclassapplier.js"></script>
+
+<input type="button" disabled id="togglePersonButton" value="Person" unselectable="on" class="unselectable">
+<input type="button" disabled id="toggleLocationButton" value="Location" unselectable="on" class="unselectable">
+<input type="button" disabled id="toggleEventButton" value="Event" unselectable="on" class="unselectable">
+
+<h2>Entities</h2>
+
+<ul id="entities">
+</ul>
+
+<script>
+    
+    // ...
+    var personApplier, locationApplier, eventApplier;
+
+    function togglePerson() {
+        personApplier.toggleSelection();
+        listEntities();
+    }
+    
+    function toggleLocation() {
+        locationApplier.toggleSelection();
+        listEntities();
+    }
+    
+    function toggleEvent() {
+        eventApplier.toggleSelection();
+        listEntities();
+    }
+
+    window.onload = function() {
+    
+        rangy.init();
+        var cssClassApplierModule = rangy.modules.CssClassApplier;
+        
+        personApplier = rangy.createCssClassApplier("person");
+        locationApplier = rangy.createCssClassApplier("location");
+        eventApplier = rangy.createCssClassApplier("event");
+    
+        var togglePersonButton = document.getElementById('togglePersonButton');
+            togglePersonButton.disabled = false;
+            togglePersonButton.ontouchstart = togglePersonButton.onmousedown = function() {
+                togglePerson();
+                return false;
+            };
+        
+        var toggleLocationButton = document.getElementById('toggleLocationButton');
+            toggleLocationButton.disabled = false;
+            toggleLocationButton.ontouchstart = toggleLocationButton.onmousedown = function() {
+                toggleLocation();
+                return false;
+            };
+ 
+        var toggleEventButton = document.getElementById('toggleEventButton');
+            toggleEventButton.disabled = false;
+            toggleEventButton.ontouchstart = toggleEventButton.onmousedown = function() {
+                toggleEvent();
+                return false;
+            };
+
+        listEntities();
+    }
+    
+    // TODO needs to listen for selection events
+    function listEntities () {
+        var entities = document.getElementById('entities');
+        
+        while (entities.hasChildNodes()) {
+            entities.removeChild(entities.lastChild);
+        }
+
+        var html = [].slice.call(document.querySelectorAll('.person, .location, .event')).map(function(entity) {
+            console.log(entity.textContent, '(' + entity.className + ')');
+            return entity; 
+        }).forEach(function (entity) {
+            var li = document.createElement('li')
+            li.innerHTML = entity.textContent + ' <span class="type">(' + entity.className + ')</span>'; 
+            entities.appendChild(li);
+        })
+        
+
+    }
+
+</script>
+
+<style>
+.person { background-color: yellow; } 
+.location { background-color: #fdd; } 
+.event { background-color: #dcf; }
+
+.type {  } 
+
+#togglePersonButton { background-color: yellow; }
+#toggleLocationButton { background-color: #fdd; }
+#toggleEventButton { background-color: #dcf; }
+
+
+</style>
+
+
+
